@@ -47,5 +47,21 @@ namespace OnlineShop
                 }
             }
         }
+
+        public static void DecreaseAmount(int productId, string userId)
+        {
+            var existingCart=TruGetByUserId(userId); //получаем карзину по Id
+            var existingCartItem = existingCart?.Items?.FirstOrDefault(x => x.Product.Id == productId);
+            if(existingCartItem == null) 
+            {
+                return;
+            }
+            existingCartItem.Amount -= 1;
+            if(existingCartItem.Amount==0)
+            {
+                existingCart.Items.Remove(existingCartItem);
+            }
+
+        }
     }
 }
