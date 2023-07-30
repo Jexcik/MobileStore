@@ -2,16 +2,16 @@
 
 namespace OnlineShop
 {
-    public static class CartsRepository
+    public class InMemoryCartsRepository : ICartsRepository
     {
-        private static List<Cart> carts = new List<Cart>();
+        private List<Cart> carts = new List<Cart>();
 
 
-        public static Cart TruGetByUserId(string userId)
+        public Cart TruGetByUserId(string userId)
         {
             return carts.FirstOrDefault(x => x.UserId == userId);
         }
-        public static void Add(Product product, string userId)
+        public void Add(Product product, string userId)
         {
             var existingCart = TruGetByUserId(userId);
             if (existingCart == null)
@@ -42,22 +42,22 @@ namespace OnlineShop
                     existingCart.Items.Add(new CartItem
                     {
                         Amount = 1,
-                        Product=product,
+                        Product = product,
                     });
                 }
             }
         }
 
-        public static void DecreaseAmount(int productId, string userId)
+        public void DecreaseAmount(int productId, string userId)
         {
-            var existingCart=TruGetByUserId(userId); //получаем карзину по Id
+            var existingCart = TruGetByUserId(userId); //получаем карзину по Id
             var existingCartItem = existingCart?.Items?.FirstOrDefault(x => x.Product.Id == productId);
-            if(existingCartItem == null) 
+            if (existingCartItem == null)
             {
                 return;
             }
             existingCartItem.Amount -= 1;
-            if(existingCartItem.Amount==0)
+            if (existingCartItem.Amount == 0)
             {
                 existingCart.Items.Remove(existingCartItem);
             }

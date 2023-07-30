@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace OnlineShop
 {
-    public class ProductsRepository
+    public class InMemoryProductsRepository : IProductsRepository
     {
-        private static List<Product> products = new List<Product>()
+        private List<Product> products = new List<Product>()
         {
             new Product("IPhone 14 ProMax",129000,"Deep Purple","/images/IPhon14.jpg"),
             new Product("Samsung Galaxy S22",98000,"Ultra","/images/Samsung.jpg"),
