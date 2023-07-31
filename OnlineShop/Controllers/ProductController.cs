@@ -4,11 +4,11 @@ namespace OnlineShop.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly InMemoryProductsRepository productsRepository;
+        private readonly ProductsInMemoryRepository productsRepository;
 
-        public ProductController(InMemoryProductsRepository productsRepository)
+        public ProductController(ProductsInMemoryRepository productsRepository)
         {
-            this.productsRepository = new InMemoryProductsRepository();
+            this.productsRepository = new ProductsInMemoryRepository();
         }
 
         public IActionResult Index(int id)

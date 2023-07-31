@@ -3,6 +3,9 @@
 @if (Model == null || Model.Items.Count == 0)
 {
     <h3>Корзина пустая</h3>
+    <div class="text-decoration-underline">
+        <a class="btn btn-outline-success" href="/home/index" role="button">Продолжить покупки</a>
+    </div>
 }
 else
 {
@@ -29,12 +32,12 @@ else
                                 </div>
                             </td>
                             <td>@item.Product.Cost</td>
-                            <td>@item.Amount</td>
-                            <td>@item.Cost</td>
                             <td>
+                                @item.Amount
                                 <a class="btn btn-outline-success" href="/cart/add?productId=@item.Product.Id" role="button">+</a>
                                 <a class="btn btn-outline-success" href="/cart/decreaseAmount?productId=@item.Product.Id" role="button">-</a>
                             </td>
+                            <td>@item.Cost</td>
                         </tr>
                     }
                 </tbody>
@@ -44,7 +47,8 @@ else
             </div>
             <div class="text-decoration-underline">
                 <a class="btn btn-outline-success" href="/home/index" role="button">Продолжить покупки</a>
-                <a class="btn btn-outline-success" href="#" role="button">Перейти к оформлению</a>
+                <a class="btn btn-outline-success" href="/order/index" role="button">Перейти к оформлению</a>
+                <a class="btn btn-outline-success" href="/cart/clear" role="button">Очистить корзину</a>
             </div>
         </div>
     </div>

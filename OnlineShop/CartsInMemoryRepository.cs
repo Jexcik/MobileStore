@@ -2,7 +2,7 @@
 
 namespace OnlineShop
 {
-    public class InMemoryCartsRepository : ICartsRepository
+    public class CartsInMemoryRepository : ICartsRepository
     {
         private List<Cart> carts = new List<Cart>();
 
@@ -62,6 +62,11 @@ namespace OnlineShop
                 existingCart.Items.Remove(existingCartItem);
             }
 
+        }
+
+        public void Clear()
+        {
+            carts.Clear();
         }
     }
 }

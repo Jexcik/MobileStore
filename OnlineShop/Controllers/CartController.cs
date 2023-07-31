@@ -23,12 +23,17 @@ namespace OnlineShop.Controllers
         public IActionResult Add(int productId)
         {
             var product = productsRepository.TryGetById(productId);
-            cartsRepository.Add(product,constants.UserId);
+            cartsRepository.Add(product, constants.UserId);
             return RedirectToAction("Index");
         }
         public IActionResult DecreaseAmount(int productId)
         {
             cartsRepository.DecreaseAmount(productId, constants.UserId);
+            return RedirectToAction("Index");
+        }
+        public IActionResult Clear()
+        {
+            cartsRepository.Clear();
             return RedirectToAction("Index");
         }
     }
