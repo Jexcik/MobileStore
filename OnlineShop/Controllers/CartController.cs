@@ -17,7 +17,7 @@ namespace OnlineShop.Controllers
 
         public IActionResult Index()
         {
-            var cart = cartsRepository.TruGetByUserId(constants.UserId);
+            var cart = cartsRepository.TryGetByUserId(constants.UserId);
             return View(cart);
         }
         public IActionResult Add(int productId)
