@@ -3,7 +3,7 @@ using OnlineShop;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<IOrdersRepository, InMemoryOrdersRepository>();
+builder.Services.AddTransient<IOrdersRepository, InMemoryOrdersRepository>();
 builder.Services.AddSingleton<ICartsRepository, InMemoryCartsRepository>();
 builder.Services.AddSingleton<IProductsRepository, InMemoryProductsRepository>();
 builder.Services.AddSingleton<Constants>();

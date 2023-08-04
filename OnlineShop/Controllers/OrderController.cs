@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Models;
 
 namespace OnlineShop.Controllers
 {
@@ -17,6 +18,14 @@ namespace OnlineShop.Controllers
         {
             var cart = cartsRepository.TryGetByUserId(constants.UserId);
             return View(cart);
+        }
+
+        //Возвращает данные из представления на сервер
+        [HttpPost]
+        public IActionResult Buy(Order order)
+        {
+            cartsRepository.Clear();
+            return View();
         }
     }
 }
