@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace OnlineShop
 {
-    public class InMemoryProductsRepository : IProductsRepository
+    public class ProductsInMemoryRepository : IProductsRepository
     {
         private List<Product> products = new List<Product>()
         {

@@ -2,7 +2,7 @@
 
 namespace OnlineShop
 {
-    public class InMemoryOrdersRepository : IOrdersRepository
+    public class OrdersInMemoryRepository : IOrdersRepository
     {
         private List<Cart> orders = new List<Cart>();
         public void Add(Cart cart)
