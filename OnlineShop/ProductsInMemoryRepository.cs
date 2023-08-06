@@ -7,9 +7,9 @@ namespace OnlineShop
     {
         private List<Product> products = new List<Product>()
         {
-            new Product("IPhone 14 ProMax",129000,"Deep Purple","/images/IPhon14.jpg"),
-            new Product("Samsung Galaxy S22",98000,"Ultra","/images/Samsung.jpg"),
-            new Product("Xiaomi 13 Ultra",42000,"Xseries","/images/Xiaomi13Pro.jpg")
+            new Product("IPhone 14 ProMax",129000,$"IOS; A16 Bionic; 256ГБ; 48МП","/images/IPhon14.jpg"),
+            new Product("Samsung Galaxy S22",98000,"Android 12; Samsung Exynos 2200; 256ГБ; 108МП","/images/Samsung.jpg"),
+            new Product("Xiaomi 13 Ultra",42000,"Android 13; Qualcomm Snapdragon 8 Gen 2; 512ГБ; 50МП","/images/Xiaomi13Pro.jpg")
         };
 
         public List<Product> GetAll()

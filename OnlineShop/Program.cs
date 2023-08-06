@@ -2,11 +2,12 @@ using OnlineShop;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Добавьте сервисы в контейнер.
 builder.Services.AddTransient<IOrdersRepository, OrdersInMemoryRepository>();
 builder.Services.AddSingleton<ICartsRepository, CartsInMemoryRepository>();
 builder.Services.AddSingleton<IProductsRepository, ProductsInMemoryRepository>();
 builder.Services.AddSingleton<ICompareRepository, CompareInMemoryRepository>();
+builder.Services.AddSingleton<IFavoriteRepository, FavoriteInMemoryRepository>();
 builder.Services.AddSingleton<Constants>();
 builder.Services.AddControllersWithViews();
 

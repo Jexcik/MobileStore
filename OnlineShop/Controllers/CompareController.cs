@@ -15,14 +15,14 @@ namespace OnlineShop.Controllers
 
         public IActionResult Index()
         {
-            var compareList = compareRepository.GetAllCompare();
-            return View(compareList);
+            var compareList = compareRepository.GetAllCompare();//Получаем список всех товаров добавленных в Сравнение!!!
+            return View(compareList);//Передаем список с продуктами добавленными в сравнение в Представление
         }
         public IActionResult Add(int id)
         {
             var product=productsRepository.TryGetById(id); //Получаем продукт по ID
-            compareRepository.Add(product);
-            return RedirectToAction("Index");
+            compareRepository.Add(product);//Добавляем переданный продукт 
+            return RedirectToAction("Index");//Переходим на страницу с списком для Сравнения
         }
         public IActionResult Del(int id) 
         {

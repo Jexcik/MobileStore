@@ -9,6 +9,9 @@
 }
 else
 {
+    <div class="text-centr">
+    <h4>Корзина</h4>
+    </div>
     <div class="row">
         <div class="col">
             <table class="table">
@@ -46,9 +49,9 @@ else
                 <h4>Итого:@Model.Cost руб.</h4>
             </div>
             <div class="text-decoration-underline">
-                <a class="btn btn-outline-secondary" href="/home/index" role="button">Продолжить покупки</a>
-                <a class="btn btn-outline-success" href="/order/index" role="button">Перейти к оформлению</a>
-                <a class="btn btn-outline-warning" href="/cart/clear" role="button">Очистить корзину</a>
+                <a class="btn btn-primary" asp-controller="Home" asp-action="Index"><i class="bi bi-arrow-90deg-left">Продолжить покупки</i></a>
+                <a class="btn btn-primary" asp-controller="Order" asp-action="Index">Перейти к оформлению</a>
+                <a class="btn btn-primary" asp-controller="Cart" asp-action="Clear"><i class="bi bi-x-circle">Очистить корзину</i></a>
             </div>
         </div>
     </div>

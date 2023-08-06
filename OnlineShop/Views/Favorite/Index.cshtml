@@ -1,0 +1,45 @@
+﻿@model List<Product>;
+@if (Model.Count() == 0)
+{
+    <div class="text-body">
+        <h3 class="bg-warning-subtle text-emphasis-warning">Список "Избранных" пуст</h3>
+        <a class="btn btn-primary" asp-controller="Home" asp-action="Index">Перейти к покупкам</a>
+    </div>
+}
+else
+{
+    <div class="text-centr">
+        <h4>Избранное</h4>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Цена руб.</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a style="color:navy" href="/product/index/@product.Id"><p>@product.Name</p></a>
+                                <div class="col-1">
+                                    <img class="img-fluid" src="@product.ImagePath">
+                                </div>
+                            </td>
+                            <td>@product.Cost</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="text-decoration-underline">
+                <a class="btn btn-primary" asp-controller="Home" asp-action="Index"><i class="bi bi-arrow-90deg-left">Продолжить покупки</i></a>
+                <a class="btn btn-primary" asp-controller="Favorite" asp-action="Clear"><i class="bi bi-x-circle">Очистить избранное</i></a>
+            </div>
+        </div>
+    </div>
+}

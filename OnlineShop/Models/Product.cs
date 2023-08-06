@@ -9,6 +9,13 @@
         public string Description { get;}
         public string ImagePath { get; }
 
+
+        //спецификация
+        public string OperatingSystem { get; }
+        public string ProcessorType { get; }
+        public string Memory { get; }
+        public string Camera { get; }
+
         public Product(string name, decimal cost, string description, string imagePath)
         {
             Id = instanceCounter;
@@ -16,6 +23,12 @@
             Cost = cost;
             Description = description;
             ImagePath = imagePath;
+            var specifications = Description.Split("; ");
+
+            OperatingSystem = specifications[0];
+            ProcessorType = specifications[1];
+            Memory = specifications[2];
+            Camera = specifications[3];
 
             instanceCounter += 1;
         }
