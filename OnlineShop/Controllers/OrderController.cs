@@ -6,6 +6,7 @@ namespace OnlineShop.Controllers
     public class OrderController : Controller
     {
         private readonly ICartsRepository cartsRepository;
+        private readonly IOrdersRepository ordersRepository;
         private readonly Constants constants;
 
         public OrderController(ICartsRepository cartsRepository, Constants constants)
@@ -24,8 +25,10 @@ namespace OnlineShop.Controllers
         [HttpPost]
         public IActionResult Buy(Order order)
         {
+            order.Cart=cartsRepository.TryGetByUserId(constants.UserId);
+            ordersRepository.Add(order);
             cartsRepository.Clear();
-            return View();
+            return View(order);
         }
     }
 }
