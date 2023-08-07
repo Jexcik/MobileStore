@@ -12,30 +12,13 @@
 
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 nav">
-            <div class="container-fluid">
-                <a class="nav-link btn-lg" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-github"></i>JexcMobileStore</a>
-                <nav class="nav justify-content-center">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-display"></i>Главная</a>
-                    <a class="nav-link" asp-area="" asp-controller="Compare" asp-action="Index"> <i class="bi bi-clipboard2-plus"></i> Список сравнения</a>
-                    <a class="nav-link" asp-area="" asp-controller="Favorite" asp-action="Index"> <i class="bi bi-heart"></i> Избранное</a>
-                    <a class="nav-link" asp-area="" asp-controller="Cart" asp-action="Index"><i class="bi bi-cart4"></i> Корзина</a>
-                </nav>
-            </div>
-        </nav>
-    </header>
+    @await Html.PartialAsync("Header")
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - OnlineShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    @await Html.PartialAsync("Footer")
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

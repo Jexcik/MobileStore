@@ -19,9 +19,15 @@ namespace OnlineShop.Controllers
         }
         public IActionResult Add(int id)
         {
-            var product = productsRepository.TryGetById(id);
-            favoriteRepository.Add(product);
-            return RedirectToAction("Index");
+            var product = productsRepository.TryGetById(id); //Получаем продукт по ID
+            favoriteRepository.Add(product); //Добавляем переданный продукт в список избранных
+            return RedirectToAction("Index");//Переходим в представление Избранных
+        }
+        public IActionResult Del(int id)
+        {
+            var product=productsRepository.TryGetById(id);
+            favoriteRepository.Del(product);
+            return RedirectToAction("Index");//Переходим в представление Избранных
         }
     }
 }
