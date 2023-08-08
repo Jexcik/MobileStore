@@ -9,9 +9,10 @@ namespace OnlineShop.Controllers
         private readonly IOrdersRepository ordersRepository;
         private readonly Constants constants;
 
-        public OrderController(ICartsRepository cartsRepository, Constants constants)
+        public OrderController(ICartsRepository cartsRepository,IOrdersRepository ordersRepository, Constants constants)
         {
             this.cartsRepository = cartsRepository;
+            this.ordersRepository = ordersRepository;
             this.constants = constants;
         }
 
