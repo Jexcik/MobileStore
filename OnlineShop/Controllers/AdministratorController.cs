@@ -1,12 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OnlineShop.Models;
 
 namespace OnlineShop.Controllers
 {
     public class AdministratorController : Controller
     {
-        public IActionResult Index()
+        private readonly IProductsRepository productsRepository;
+
+        public AdministratorController(IProductsRepository productsRepository)
         {
-            return View();
+            this.productsRepository = productsRepository;
         }
         public IActionResult GetOrders()
         {
@@ -14,13 +17,18 @@ namespace OnlineShop.Controllers
         }
         public IActionResult GetProducts() 
         {
-            return View();
+            var products = productsRepository.GetAll();
+            return View(products);
         }
         public IActionResult GetUsers()
         {
             return View();
         }
         public IActionResult GetRoles() 
+        {
+            return View();
+        }
+        public IActionResult AddProduct()
         {
             return View();
         }

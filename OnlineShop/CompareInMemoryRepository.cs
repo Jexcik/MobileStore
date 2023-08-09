@@ -5,7 +5,7 @@ namespace OnlineShop
     public class CompareInMemoryRepository : ICompareRepository
     {
         public List<Product> compare = new List<Product>();
-        public List<Product> GetAllCompare()
+        public List<Product> GetAllCompare() //Метод для получения списка продуктов для сравнения
         {
             return compare;
         }

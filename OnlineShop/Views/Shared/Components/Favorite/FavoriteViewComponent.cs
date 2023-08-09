@@ -15,6 +15,5 @@ namespace OnlineShop.Views.Shared.Components.Favorite
             var fovorite = favoriteRepository.GetAllFavorite();
             return View("Favorite", fovorite);
         }
-
     }
 }

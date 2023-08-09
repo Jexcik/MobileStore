@@ -5,8 +5,8 @@
             <nav class="nav justify-content-center">
                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-display"></i>Главная</a>
                 <a class="nav-link" asp-area="" asp-controller="Autorization" asp-action="Index"><i class="bi bi-person"></i>Войти</a>
-                <a class="nav-link" asp-area="" asp-controller="Administrator" asp-action="Index"><i class="bg-info bi-database"></i>Администратор</a>
-                <a class="nav-link" asp-area="" asp-controller="Compare" asp-action="Index"> <i class="bi bi-clipboard2-plus"></i> Список сравнения</a>
+                <a class="nav-link" asp-area="" asp-controller="Administrator" asp-action="GetProducts"><i class="bg-info bi-database"></i>Администратор</a>
+                <a class="nav-link" asp-area="" asp-controller="Compare" asp-action="Index"> <i class="bi bi-clipboard2-plus"></i> Список сравнения @await Component.InvokeAsync("Compare")</a>
                 <a class="nav-link" asp-area="" asp-controller="Favorite" asp-action="Index"> <i class="bi bi-heart"></i> Избранное @await Component.InvokeAsync("Favorite")</a>
                 <a class="nav-link" asp-area="" asp-controller="Cart" asp-action="Index"><i class="bi bi-cart4"></i> Корзина @await Component.InvokeAsync("Cart")</a>
             </nav>

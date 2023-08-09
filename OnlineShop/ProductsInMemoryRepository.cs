@@ -12,6 +12,11 @@ namespace OnlineShop
             new Product("Xiaomi 13 Ultra",42000,"Android 13; Qualcomm Snapdragon 8 Gen 2; 512ГБ; 50МП","/images/Xiaomi13Pro.jpg"),
         };
 
+        public void Add(Product product)
+        {
+            products.Add(product);
+        }
+
         public List<Product> GetAll()
         {
             return products;
